@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AlexandreTI-AUT/carbom-footprint/static/css/main.56e7df0a.css",
+    "main.js": "/AlexandreTI-AUT/carbom-footprint/static/js/main.7e60ac2f.js",
+    "static/js/488.08f67d1f.chunk.js": "/AlexandreTI-AUT/carbom-footprint/static/js/488.08f67d1f.chunk.js",
+    "index.html": "/AlexandreTI-AUT/carbom-footprint/index.html",
+    "main.56e7df0a.css.map": "/AlexandreTI-AUT/carbom-footprint/static/css/main.56e7df0a.css.map",
+    "main.7e60ac2f.js.map": "/AlexandreTI-AUT/carbom-footprint/static/js/main.7e60ac2f.js.map",
+    "488.08f67d1f.chunk.js.map": "/AlexandreTI-AUT/carbom-footprint/static/js/488.08f67d1f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56e7df0a.css",
+    "static/js/main.7e60ac2f.js"
+  ]
+}
