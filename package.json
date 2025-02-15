@@ -2,7 +2,7 @@
   "name": "carbon-footprint-form",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/AlexandreTI-AUT/carbom-footprint",
+  "homepage": "https://alexandreti-aut.github.io/carbom-footprint/",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
