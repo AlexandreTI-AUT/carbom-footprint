@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/AlexandreTI-AUT/carbom-footprint/static/css/main.56e7df0a.css",
-    "main.js": "/AlexandreTI-AUT/carbom-footprint/static/js/main.7e60ac2f.js",
-    "static/js/488.08f67d1f.chunk.js": "/AlexandreTI-AUT/carbom-footprint/static/js/488.08f67d1f.chunk.js",
-    "index.html": "/AlexandreTI-AUT/carbom-footprint/index.html",
-    "main.56e7df0a.css.map": "/AlexandreTI-AUT/carbom-footprint/static/css/main.56e7df0a.css.map",
-    "main.7e60ac2f.js.map": "/AlexandreTI-AUT/carbom-footprint/static/js/main.7e60ac2f.js.map",
-    "488.08f67d1f.chunk.js.map": "/AlexandreTI-AUT/carbom-footprint/static/js/488.08f67d1f.chunk.js.map"
+    "main.css": "/carbom-footprint/static/css/main.56e7df0a.css",
+    "main.js": "/carbom-footprint/static/js/main.e7192a37.js",
+    "static/js/488.08f67d1f.chunk.js": "/carbom-footprint/static/js/488.08f67d1f.chunk.js",
+    "index.html": "/carbom-footprint/index.html",
+    "main.56e7df0a.css.map": "/carbom-footprint/static/css/main.56e7df0a.css.map",
+    "main.e7192a37.js.map": "/carbom-footprint/static/js/main.e7192a37.js.map",
+    "488.08f67d1f.chunk.js.map": "/carbom-footprint/static/js/488.08f67d1f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56e7df0a.css",
-    "static/js/main.7e60ac2f.js"
+    "static/js/main.e7192a37.js"
   ]
 }
