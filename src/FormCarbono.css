@@ -47,3 +47,25 @@ input {
     font-weight: bold;
     margin-top: 10px;
 }
+
+.form-group label {
+    font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        /* Garante espaçamento uniforme abaixo da label */
+}
+
+select,
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    /* Garante que todos os campos tenham a mesma largura */
+    box-sizing: border-box;
+    /* Evita que padding afete a largura total */
+    height: 40px;
+    /* Mantém o select alinhado com os inputs */
+}
