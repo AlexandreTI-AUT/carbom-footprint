@@ -69,3 +69,8 @@ input {
     height: 40px;
     /* Mantém o select alinhado com os inputs */
 }
+
+.required {
+    color: red;
+    font-weight: bold;
+}

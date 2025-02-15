@@ -40,7 +40,7 @@ const FormCarbono = () => {
       setQuantidade("");
       setErrors({});
 
-      setTimeout(() => setSuccessMessage(""), 20000); // Expira após 20 segundos
+      setTimeout(() => setSuccessMessage(""), 20000);
     }
   };
 
@@ -51,7 +51,9 @@ const FormCarbono = () => {
 
       <form onSubmit={handleSubmit} data-test-id="form-carbono">
         <div className="form-group">
-          <label>Empresa:</label>
+          <label>
+            Empresa: <span className="required">*</span>
+          </label>
           <input
             type="text"
             value={empresa}
@@ -66,7 +68,9 @@ const FormCarbono = () => {
         </div>
 
         <div className="form-group">
-          <label>Tipo de Emissão:</label>
+          <label>
+            Tipo de Emissão: <span className="required">*</span>
+          </label>
           <select
             value={tipoEmissao}
             onChange={(e) => setTipoEmissao(e.target.value)}
@@ -106,7 +110,9 @@ const FormCarbono = () => {
         </div>
 
         <div className="form-group">
-          <label>Quantidade Estimada (toneladas):</label>
+          <label>
+            Quantidade Estimada (toneladas): <span className="required">*</span>
+          </label>
           <input
             type="number"
             value={quantidade}
@@ -126,11 +132,7 @@ const FormCarbono = () => {
       </form>
 
       {successMessage && (
-        <p
-          className="success-message"
-          data-test-id="mensagem-sucesso"
-          style={{ color: "blue" }}
-        >
+        <p className="success-message" data-test-id="mensagem-sucesso">
           {successMessage}
         </p>
       )}
