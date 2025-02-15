@@ -1,6 +1,19 @@
 import { useState } from "react";
 import "./FormCarbono.css";
 
+const tiposEmissao = [
+  "CO₂ (Dióxido de Carbono)",
+  "CH₄ (Metano)",
+  "N₂O (Óxido Nitroso)",
+  "CFCs (Clorofluorcarbonetos)",
+  "HFCs (Hidrofluorcarbonetos)",
+  "SF₆ (Hexafluoreto de Enxofre)",
+  "O₃ (Ozônio)",
+  "NOx (Óxidos de Nitrogênio)",
+  "SO₂ (Dióxido de Enxofre)",
+  "CO (Monóxido de Carbono)",
+];
+
 const FormCarbono = () => {
   const [empresa, setEmpresa] = useState("");
   const [tipoEmissao, setTipoEmissao] = useState("");
@@ -11,11 +24,12 @@ const FormCarbono = () => {
   const validateFields = () => {
     let formErrors = {};
 
-    if (!empresa.trim()) formErrors.empresa = "Empresa é obrigatória.";
+    if (!empresa.trim())
+      formErrors.empresa = "Por favor, insira o nome da empresa.";
     if (!tipoEmissao.trim())
-      formErrors.tipoEmissao = "Tipo de emissão é obrigatório.";
+      formErrors.tipoEmissao = "Selecione um tipo de emissão.";
     if (!quantidade.trim()) {
-      formErrors.quantidade = "Quantidade estimada é obrigatória.";
+      formErrors.quantidade = "Informe a quantidade estimada.";
     } else if (!/^\d+$/.test(quantidade)) {
       formErrors.quantidade = "Digite apenas números inteiros.";
     }
@@ -50,82 +64,68 @@ const FormCarbono = () => {
       <p className="subtitulo">Preencha os dados</p>
 
       <form onSubmit={handleSubmit} data-test-id="form-carbono">
+        {/* Empresa */}
         <div className="form-group">
-          <label>
+          <label htmlFor="empresa">
             Empresa: <span className="required">*</span>
           </label>
           <input
+            id="empresa"
             type="text"
             value={empresa}
             onChange={(e) => setEmpresa(e.target.value)}
+            placeholder="Digite o nome da empresa"
             data-test-id="input-empresa"
+            autoFocus
           />
           {errors.empresa && (
-            <span className="error-message" data-test-id="erro-empresa">
-              {errors.empresa}
-            </span>
+            <span className="error-message">{errors.empresa}</span>
           )}
         </div>
 
+        {/* Tipo de Emissão */}
         <div className="form-group">
-          <label>
+          <label htmlFor="tipoEmissao">
             Tipo de Emissão: <span className="required">*</span>
           </label>
           <select
+            id="tipoEmissao"
             value={tipoEmissao}
             onChange={(e) => setTipoEmissao(e.target.value)}
             data-test-id="select-tipo-emissao"
           >
             <option value="">Selecione um tipo</option>
-            <option value="CO₂ (Dióxido de Carbono)">
-              CO₂ (Dióxido de Carbono)
-            </option>
-            <option value="CH₄ (Metano)">CH₄ (Metano)</option>
-            <option value="N₂O (Óxido Nitroso)">N₂O (Óxido Nitroso)</option>
-            <option value="CFCs (Clorofluorcarbonetos)">
-              CFCs (Clorofluorcarbonetos)
-            </option>
-            <option value="HFCs (Hidrofluorcarbonetos)">
-              HFCs (Hidrofluorcarbonetos)
-            </option>
-            <option value="SF₆ (Hexafluoreto de Enxofre)">
-              SF₆ (Hexafluoreto de Enxofre)
-            </option>
-            <option value="O₃ (Ozônio)">O₃ (Ozônio)</option>
-            <option value="NOx (Óxidos de Nitrogênio)">
-              NOx (Óxidos de Nitrogênio)
-            </option>
-            <option value="SO₂ (Dióxido de Enxofre)">
-              SO₂ (Dióxido de Enxofre)
-            </option>
-            <option value="CO (Monóxido de Carbono)">
-              CO (Monóxido de Carbono)
-            </option>
+            {tiposEmissao.map((tipo, index) => (
+              <option key={index} value={tipo}>
+                {tipo}
+              </option>
+            ))}
           </select>
           {errors.tipoEmissao && (
-            <span className="error-message" data-test-id="erro-tipo-emissao">
-              {errors.tipoEmissao}
-            </span>
+            <span className="error-message">{errors.tipoEmissao}</span>
           )}
         </div>
 
+        {/* Quantidade Estimada */}
         <div className="form-group">
-          <label>
+          <label htmlFor="quantidade">
             Quantidade Estimada (toneladas): <span className="required">*</span>
           </label>
           <input
+            id="quantidade"
             type="number"
+            min="0"
             value={quantidade}
             onChange={(e) => setQuantidade(e.target.value.replace(/\D/g, ""))}
+            placeholder="Digite a quantidade em toneladas"
             data-test-id="input-quantidade"
           />
           {errors.quantidade && (
-            <span className="error-message" data-test-id="erro-quantidade">
-              {errors.quantidade}
-            </span>
+            <span className="error-message">{errors.quantidade}</span>
           )}
         </div>
 
+        {/* Botão */}
         <button type="submit" data-test-id="botao-registrar">
           Registrar
         </button>
